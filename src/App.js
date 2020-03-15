@@ -1,7 +1,8 @@
 import React from 'react';
 
 import login_image from './assets/login_image.jpeg';
-
+import finger_print from './assets/finger_print.png';
+import './index.css'
 export default class App extends React.Component {
 
   state = {
@@ -34,14 +35,15 @@ export default class App extends React.Component {
           />
           {this.state.coordinateList.map(item => {
             return (
-              <div style={{ width: 40, height: 40, borderRadius: 40 / 2, backgroundColor: 'rgba(0,0,0,0.3)', position: 'absolute', top: item.y - (40 / 2), left: item.x - (40 / 8), display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <p style={{ color: '#fff', margin: 0 }}>{item.percentage} %</p>
+              <div style={{ width: 50, height: 50, borderRadius: 50 / 2, backgroundColor: 'rgba(0,0,0,0.3)', position: 'absolute', top: item.y - (40 / 2), left: item.x - (40 / 8), display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={finger_print} style={{ position: 'absolute', width: 50, height: 50, borderRadius: 50 / 2, }} />
+                <p className="textStyle"> {item.percentage} %</p>
               </div>
             );
           })}
         </div>
-      </div>
-    </div>;
+    </div>
+    </div >;
   }
 }
 
